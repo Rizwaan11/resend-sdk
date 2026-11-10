@@ -30,7 +30,7 @@ Many entities are named after response schemas (`CreateBatchEmail`, `RemoveInbox
 The generated LICENSE and package author say Voxgig (I changed them to my name). `npm install` in `.sdk` reports 3 vulnerabilities (1 high), and Node 24 prints an `fs.F_OK` deprecation warning. The full test run takes about 160 seconds.
 
 ## Time and timeline
-Richard sent the task on 28 Oct. I did the work on 10 Nov, a few days past the suggested week, after his 9 Nov check-in. I ran out of room around other commitments, and he'd said that was fine.
+
 
 The generate-and-test run took about 16 minutes of machine time, and roughly 10 of that went on working around problem 1. My own hands-on time was about 25 minutes, inside the 30-minute limit: creating the Resend account and API key, creating the repo, and reviewing the output and this report.
 
