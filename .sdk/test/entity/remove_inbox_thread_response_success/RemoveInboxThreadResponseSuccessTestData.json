@@ -1,0 +1,33 @@
+{
+  "existing": {
+    "remove_inbox_thread_response_success": {
+      "REMOVE_INBOX_THREAD_RESPONSE_SUCCESS00": {
+        "inbox_id": "INBOX01",
+        "thread_id": "THREAD01",
+        "id": "REMOVE_INBOX_THREAD_RESPONSE_SUCCESS00"
+      },
+      "REMOVE_INBOX_THREAD_RESPONSE_SUCCESS01": {
+        "inbox_id": "INBOX01",
+        "thread_id": "THREAD01",
+        "id": "REMOVE_INBOX_THREAD_RESPONSE_SUCCESS01"
+      },
+      "REMOVE_INBOX_THREAD_RESPONSE_SUCCESS02": {
+        "inbox_id": "INBOX01",
+        "thread_id": "THREAD01",
+        "id": "REMOVE_INBOX_THREAD_RESPONSE_SUCCESS02"
+      }
+    }
+  },
+  "new": {
+    "remove_inbox_thread_response_success": {
+      "remove_inbox_thread_response_success_ref01": {}
+    }
+  },
+  "requests": {
+    "DELETE /inboxes/{inbox_id}/threads/{thread_id}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    }
+  }
+}

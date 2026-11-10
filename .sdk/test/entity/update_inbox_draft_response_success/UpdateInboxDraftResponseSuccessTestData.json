@@ -1,0 +1,66 @@
+{
+  "existing": {
+    "update_inbox_draft_response_success": {
+      "UPDATE_INBOX_DRAFT_RESPONSE_SUCCESS00": {
+        "attachments": "s5a",
+        "bcc": "s5b",
+        "cc": "s5c",
+        "html": "s5d",
+        "id": "UPDATE_INBOX_DRAFT_RESPONSE_SUCCESS00",
+        "object": "s5f",
+        "subject": "s60",
+        "text": "s61",
+        "to": "s62",
+        "draft_id": "DRAFT01",
+        "inbox_id": "INBOX01"
+      },
+      "UPDATE_INBOX_DRAFT_RESPONSE_SUCCESS01": {
+        "attachments": "sb4",
+        "bcc": "sb5",
+        "cc": "sb6",
+        "html": "sb7",
+        "id": "UPDATE_INBOX_DRAFT_RESPONSE_SUCCESS01",
+        "object": "sb9",
+        "subject": "sba",
+        "text": "sbb",
+        "to": "sbc",
+        "draft_id": "DRAFT01",
+        "inbox_id": "INBOX01"
+      },
+      "UPDATE_INBOX_DRAFT_RESPONSE_SUCCESS02": {
+        "attachments": "s10e",
+        "bcc": "s10f",
+        "cc": "s110",
+        "html": "s111",
+        "id": "UPDATE_INBOX_DRAFT_RESPONSE_SUCCESS02",
+        "object": "s113",
+        "subject": "s114",
+        "text": "s115",
+        "to": "s116",
+        "draft_id": "DRAFT01",
+        "inbox_id": "INBOX01"
+      }
+    }
+  },
+  "new": {
+    "update_inbox_draft_response_success": {
+      "update_inbox_draft_response_success_ref01": {
+        "attachments": "s168",
+        "bcc": "s169",
+        "cc": "s16a",
+        "html": "s16b",
+        "object": "s16d",
+        "subject": "s16e",
+        "text": "s16f",
+        "to": "s170"
+      }
+    }
+  },
+  "requests": {
+    "PATCH /inboxes/{inbox_id}/drafts/{draft_id}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    }
+  }
+}

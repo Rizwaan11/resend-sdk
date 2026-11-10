@@ -1,0 +1,150 @@
+# Entity: update_inbox_thread_response_success
+
+main: kit: entity: update_inbox_thread_response_success: {
+
+  alias: field: {}
+
+  fields: {
+    folder: {
+      h: "Folder"
+      n: "folder"
+      op: {
+        update: {
+          req: false
+          type: "`$STRING`"
+        }
+      }
+      r: true
+      sh: "The folder the thread is in."
+      t: "`$STRING`"
+    }
+    id: {
+      fo: "uuid"
+      h: "Id"
+      n: "id"
+      r: true
+      sh: "The ID of the thread."
+      t: "`$STRING`"
+    }
+    labels: {
+      h: "Labels"
+      n: "labels"
+      r: true
+      sh: "The labels attached to the thread."
+      t: "`$ARRAY`"
+    }
+    object: {
+      h: "Object"
+      n: "object"
+      r: true
+      sh: "The object type."
+      t: "`$STRING`"
+    }
+    read: {
+      h: "Read"
+      n: "read"
+      op: {
+        update: {
+          req: false
+          type: "`$BOOLEAN`"
+        }
+      }
+      r: true
+      sh: "True only when every email in the thread is read."
+      t: "`$BOOLEAN`"
+    }
+    subject: {
+      h: "Subject"
+      n: "subject"
+      r: true
+      sh: "The subject of the thread."
+      t: [
+        "`$ONE`"
+        [
+          "`$STRING`"
+          "`$NULL`"
+        ]
+      ]
+    }
+  }
+
+  id: {
+    field: "id"
+    name: "id"
+  }
+
+  name: "update_inbox_thread_response_success"
+  op: {
+    update: {
+      name: "update"
+      points: [
+        {
+          bf: [
+            "folder"
+            "read"
+          ]
+          co: {
+            id: "PATCH /inboxes/{inbox_id}/threads/{thread_id}"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                ex: "b3e2b2b6-3f0e-4c8e-9ad3-2f43a1e2c7f1"
+                k: "param"
+                n: "inbox_id"
+                or: "inbox_id"
+                r: true
+                t: "`$STRING`"
+              }
+              {
+                k: "param"
+                n: "thread_id"
+                or: "thread_id"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "PATCH"
+          o: "/inboxes/{inbox_id}/threads/{thread_id}"
+          q: {
+            exist: [
+              "inbox_id"
+              "thread_id"
+            ]
+          }
+          rs: {
+            kind: "json"
+            media: "application/json"
+          }
+          s: [
+            {
+              lit: "inboxes"
+            }
+            {
+              var: "inbox_id"
+            }
+            {
+              lit: "threads"
+            }
+            {
+              var: "thread_id"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+  }
+
+
+  relations: ancestors: [
+    [path("$.main.kit.entity.inbox")]
+  ]
+
+}

@@ -1,0 +1,22 @@
+# BasicCreateInboxLabelResponseSuccessFlow
+
+main: kit: flow: BasicCreateInboxLabelResponseSuccessFlow:
+{
+  entity: "create_inbox_label_response_success",
+  kind: "basic",
+  name: "BasicCreateInboxLabelResponseSuccessFlow",
+  step: [
+    {
+      i: {
+        ref: "create_inbox_label_response_success_ref01"
+      }
+
+      m: {
+        inbox_id: "inbox01"
+      }
+
+      o: "create"
+    }
+  ],
+  "key$": "BasicCreateInboxLabelResponseSuccessFlow"
+}

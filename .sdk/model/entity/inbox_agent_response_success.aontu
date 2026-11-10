@@ -1,0 +1,84 @@
+# Entity: inbox_agent_response_success
+
+main: kit: entity: inbox_agent_response_success: {
+
+  alias: field: {}
+
+  fields: {
+    id: {
+      h: "Id"
+      n: "id"
+      r: false
+      syn: true
+      t: "`$STRING`"
+    }
+  }
+
+  id: {
+    field: "id"
+    name: "id"
+  }
+
+  name: "inbox_agent_response_success"
+  op: {
+    list: {
+      name: "list"
+      points: [
+        {
+          co: {
+            id: "GET /inboxes/{inbox_id}/agent"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                ex: "b3e2b2b6-3f0e-4c8e-9ad3-2f43a1e2c7f1"
+                k: "param"
+                n: "id"
+                or: "inbox_id"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/inboxes/{inbox_id}/agent"
+          q: {
+            "$action": "agent"
+            exist: [
+              "id"
+            ]
+          }
+          r: {
+            param: {
+              inbox_id: "id"
+            }
+          }
+          rs: {
+            kind: "json"
+            media: "application/json"
+          }
+          s: [
+            {
+              lit: "inboxes"
+            }
+            {
+              var: "id"
+            }
+            {
+              lit: "agent"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body.actions`"
+          }
+        }
+      ]
+    }
+  }
+
+
+
+}

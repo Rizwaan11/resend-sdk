@@ -1,0 +1,118 @@
+# Entity: update_inbox_label_response_success
+
+main: kit: entity: update_inbox_label_response_success: {
+
+  alias: field: {}
+
+  fields: {
+    color: {
+      h: "Color"
+      n: "color"
+      r: false
+      sh: "A new color for the label, as a `#RRGGBB` hex color."
+      t: "`$STRING`"
+    }
+    id: {
+      fo: "uuid"
+      h: "Id"
+      n: "id"
+      r: true
+      sh: "The ID of the updated label."
+      t: "`$STRING`"
+    }
+    name: {
+      h: "Name"
+      n: "name"
+      r: false
+      sh: "A new name for the label."
+      t: "`$STRING`"
+    }
+    object: {
+      h: "Object"
+      n: "object"
+      r: true
+      sh: "Type of the response object."
+      t: "`$STRING`"
+    }
+  }
+
+  id: {
+    field: "id"
+    name: "id"
+  }
+
+  name: "update_inbox_label_response_success"
+  op: {
+    update: {
+      name: "update"
+      points: [
+        {
+          bf: [
+            "color"
+            "name"
+          ]
+          co: {
+            id: "PATCH /inboxes/{inbox_id}/labels/{label_id}"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                ex: "b3e2b2b6-3f0e-4c8e-9ad3-2f43a1e2c7f1"
+                k: "param"
+                n: "inbox_id"
+                or: "inbox_id"
+                r: true
+                t: "`$STRING`"
+              }
+              {
+                k: "param"
+                n: "label_id"
+                or: "label_id"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "PATCH"
+          o: "/inboxes/{inbox_id}/labels/{label_id}"
+          q: {
+            exist: [
+              "inbox_id"
+              "label_id"
+            ]
+          }
+          rs: {
+            kind: "json"
+            media: "application/json"
+          }
+          s: [
+            {
+              lit: "inboxes"
+            }
+            {
+              var: "inbox_id"
+            }
+            {
+              lit: "labels"
+            }
+            {
+              var: "label_id"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+  }
+
+
+  relations: ancestors: [
+    [path("$.main.kit.entity.inbox")]
+  ]
+
+}

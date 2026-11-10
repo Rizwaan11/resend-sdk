@@ -1,0 +1,87 @@
+# Entity: create_inbox_label_response_success
+
+main: kit: entity: create_inbox_label_response_success: {
+
+  alias: field: {}
+
+  fields: {
+    color: {
+      h: "Color"
+      n: "color"
+      r: false
+      sh: "The color of the label, as a `#RRGGBB` hex color."
+      t: "`$STRING`"
+    }
+    name: {
+      h: "Name"
+      n: "name"
+      r: true
+      sh: "The name of the label."
+      t: "`$STRING`"
+    }
+  }
+
+  name: "create_inbox_label_response_success"
+  op: {
+    create: {
+      name: "create"
+      points: [
+        {
+          bf: [
+            "color"
+            "name"
+          ]
+          co: {
+            id: "POST /inboxes/{inbox_id}/labels"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                ex: "b3e2b2b6-3f0e-4c8e-9ad3-2f43a1e2c7f1"
+                k: "param"
+                n: "inbox_id"
+                or: "inbox_id"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "POST"
+          o: "/inboxes/{inbox_id}/labels"
+          q: {
+            exist: [
+              "inbox_id"
+            ]
+          }
+          rs: {
+            kind: "json"
+            media: "application/json"
+          }
+          s: [
+            {
+              lit: "inboxes"
+            }
+            {
+              var: "inbox_id"
+            }
+            {
+              lit: "labels"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+  }
+
+
+  relations: ancestors: [
+    [path("$.main.kit.entity.inbox")]
+  ]
+
+}

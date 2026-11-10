@@ -1,0 +1,91 @@
+{
+  "existing": {
+    "inbox": {
+      "INBOX00": {
+        "created_at": "s82",
+        "domain_id": "DOMAIN01",
+        "drafts": 132,
+        "email_address": "s85",
+        "forwarding": true,
+        "from_name": "s87",
+        "id": "INBOX00",
+        "last_received": "s89",
+        "name": "s8a",
+        "object": "s8b",
+        "receiving_address": "s8c",
+        "unread": 141,
+        "updated_at": "s8e"
+      },
+      "INBOX01": {
+        "created_at": "s104",
+        "domain_id": "DOMAIN01",
+        "drafts": 262,
+        "email_address": "s107",
+        "forwarding": true,
+        "from_name": "s109",
+        "id": "INBOX01",
+        "last_received": "s10b",
+        "name": "s10c",
+        "object": "s10d",
+        "receiving_address": "s10e",
+        "unread": 271,
+        "updated_at": "s110"
+      },
+      "INBOX02": {
+        "created_at": "s186",
+        "domain_id": "DOMAIN01",
+        "drafts": 392,
+        "email_address": "s189",
+        "forwarding": true,
+        "from_name": "s18b",
+        "id": "INBOX02",
+        "last_received": "s18d",
+        "name": "s18e",
+        "object": "s18f",
+        "receiving_address": "s190",
+        "unread": 401,
+        "updated_at": "s192"
+      }
+    }
+  },
+  "new": {
+    "inbox": {
+      "inbox_ref01": {
+        "created_at": "s208",
+        "domain_id": "DOMAIN01",
+        "drafts": 522,
+        "email_address": "s20b",
+        "forwarding": true,
+        "from_name": "s20d",
+        "last_received": "s20f",
+        "name": "s210",
+        "object": "s211",
+        "receiving_address": "s212",
+        "unread": 531,
+        "updated_at": "s214"
+      }
+    }
+  },
+  "requests": {
+    "POST /inboxes": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "GET /inboxes": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "GET /inboxes/{inbox_id}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "PATCH /inboxes/{inbox_id}/agent": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    }
+  }
+}

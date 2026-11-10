@@ -1,0 +1,26 @@
+# BasicInboxLabelFlow
+
+main: kit: flow: BasicInboxLabelFlow:
+{
+  entity: "inbox_label",
+  kind: "basic",
+  name: "BasicInboxLabelFlow",
+  step: [
+    {
+      m: {
+        inbox_id: "inbox01"
+      }
+
+      o: "list",
+      v: [
+        {
+          apply: "ItemExists",
+          def: {
+            ref: "inbox_label_ref01"
+          }
+        }
+      ]
+    }
+  ],
+  "key$": "BasicInboxLabelFlow"
+}

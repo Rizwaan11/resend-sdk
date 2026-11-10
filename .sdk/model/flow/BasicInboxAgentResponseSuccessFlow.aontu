@@ -1,0 +1,26 @@
+# BasicInboxAgentResponseSuccessFlow
+
+main: kit: flow: BasicInboxAgentResponseSuccessFlow:
+{
+  entity: "inbox_agent_response_success",
+  kind: "basic",
+  name: "BasicInboxAgentResponseSuccessFlow",
+  step: [
+    {
+      m: {
+        inbox_id: "inbox01"
+      }
+
+      o: "list",
+      v: [
+        {
+          apply: "ItemExists",
+          def: {
+            ref: "inbox_agent_response_success_ref01"
+          }
+        }
+      ]
+    }
+  ],
+  "key$": "BasicInboxAgentResponseSuccessFlow"
+}

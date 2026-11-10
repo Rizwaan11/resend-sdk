@@ -1,0 +1,29 @@
+# BasicUpdateInboxResponseSuccessFlow
+
+main: kit: flow: BasicUpdateInboxResponseSuccessFlow:
+{
+  entity: "update_inbox_response_success",
+  kind: "basic",
+  name: "BasicUpdateInboxResponseSuccessFlow",
+  step: [
+    {
+      i: {
+        ref: "update_inbox_response_success_ref01",
+        srcdatavar: "update_inbox_response_success_ref01_data",
+        suffix: "_up0",
+        textfield: "from_name"
+      }
+
+      o: "update",
+      s: [
+        {
+          apply: "TextFieldMark",
+          def: {
+            mark: "Mark01-update_inbox_response_success_ref01"
+          }
+        }
+      ]
+    }
+  ],
+  "key$": "BasicUpdateInboxResponseSuccessFlow"
+}

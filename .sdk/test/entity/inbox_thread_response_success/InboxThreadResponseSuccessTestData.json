@@ -1,0 +1,54 @@
+{
+  "existing": {
+    "inbox_thread_response_success": {
+      "INBOX_THREAD_RESPONSE_SUCCESS00": {
+        "folder": "s3c",
+        "id": "INBOX_THREAD_RESPONSE_SUCCESS00",
+        "labels": [],
+        "object": "s3f",
+        "read": true,
+        "subject": "s41",
+        "inbox_id": "INBOX01",
+        "thread_id": "THREAD01"
+      },
+      "INBOX_THREAD_RESPONSE_SUCCESS01": {
+        "folder": "s78",
+        "id": "INBOX_THREAD_RESPONSE_SUCCESS01",
+        "labels": [],
+        "object": "s7b",
+        "read": true,
+        "subject": "s7d",
+        "inbox_id": "INBOX01",
+        "thread_id": "THREAD01"
+      },
+      "INBOX_THREAD_RESPONSE_SUCCESS02": {
+        "folder": "sb4",
+        "id": "INBOX_THREAD_RESPONSE_SUCCESS02",
+        "labels": [],
+        "object": "sb7",
+        "read": true,
+        "subject": "sb9",
+        "inbox_id": "INBOX01",
+        "thread_id": "THREAD01"
+      }
+    }
+  },
+  "new": {
+    "inbox_thread_response_success": {
+      "inbox_thread_response_success_ref01": {
+        "folder": "sf0",
+        "labels": [],
+        "object": "sf3",
+        "read": true,
+        "subject": "sf5"
+      }
+    }
+  },
+  "requests": {
+    "GET /inboxes/{inbox_id}/threads/{thread_id}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    }
+  }
+}

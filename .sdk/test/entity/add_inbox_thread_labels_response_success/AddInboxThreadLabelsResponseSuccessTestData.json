@@ -1,0 +1,46 @@
+{
+  "existing": {
+    "add_inbox_thread_labels_response_success": {
+      "ADD_INBOX_THREAD_LABELS_RESPONSE_SUCCESS00": {
+        "data": [],
+        "labels": [],
+        "object": "s20",
+        "inbox_id": "INBOX01",
+        "thread_id": "THREAD01",
+        "id": "ADD_INBOX_THREAD_LABELS_RESPONSE_SUCCESS00"
+      },
+      "ADD_INBOX_THREAD_LABELS_RESPONSE_SUCCESS01": {
+        "data": [],
+        "labels": [],
+        "object": "s3e",
+        "inbox_id": "INBOX01",
+        "thread_id": "THREAD01",
+        "id": "ADD_INBOX_THREAD_LABELS_RESPONSE_SUCCESS01"
+      },
+      "ADD_INBOX_THREAD_LABELS_RESPONSE_SUCCESS02": {
+        "data": [],
+        "labels": [],
+        "object": "s5c",
+        "inbox_id": "INBOX01",
+        "thread_id": "THREAD01",
+        "id": "ADD_INBOX_THREAD_LABELS_RESPONSE_SUCCESS02"
+      }
+    }
+  },
+  "new": {
+    "add_inbox_thread_labels_response_success": {
+      "add_inbox_thread_labels_response_success_ref01": {
+        "data": [],
+        "labels": [],
+        "object": "s7a"
+      }
+    }
+  },
+  "requests": {
+    "POST /inboxes/{inbox_id}/threads/{thread_id}/labels": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    }
+  }
+}

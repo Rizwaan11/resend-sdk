@@ -1,0 +1,22 @@
+# BasicCreateInboxDraftResponseSuccessFlow
+
+main: kit: flow: BasicCreateInboxDraftResponseSuccessFlow:
+{
+  entity: "create_inbox_draft_response_success",
+  kind: "basic",
+  name: "BasicCreateInboxDraftResponseSuccessFlow",
+  step: [
+    {
+      i: {
+        ref: "create_inbox_draft_response_success_ref01"
+      }
+
+      m: {
+        inbox_id: "inbox01"
+      }
+
+      o: "create"
+    }
+  ],
+  "key$": "BasicCreateInboxDraftResponseSuccessFlow"
+}

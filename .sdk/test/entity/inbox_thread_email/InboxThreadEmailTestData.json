@@ -1,0 +1,86 @@
+{
+  "existing": {
+    "inbox_thread_email": {
+      "INBOX_THREAD_EMAIL00": {
+        "attachments": [],
+        "bcc": [],
+        "cc": [],
+        "direction": "s8f",
+        "from": "s90",
+        "html": "s91",
+        "id": "INBOX_THREAD_EMAIL00",
+        "message_id": "MESSAGE01",
+        "read": true,
+        "received_at": "s95",
+        "reply_to": [],
+        "subject": "s97",
+        "text": "s98",
+        "to": [],
+        "inbox_id": "INBOX01",
+        "thread_id": "THREAD01"
+      },
+      "INBOX_THREAD_EMAIL01": {
+        "attachments": [],
+        "bcc": [],
+        "cc": [],
+        "direction": "s11b",
+        "from": "s11c",
+        "html": "s11d",
+        "id": "INBOX_THREAD_EMAIL01",
+        "message_id": "MESSAGE01",
+        "read": true,
+        "received_at": "s121",
+        "reply_to": [],
+        "subject": "s123",
+        "text": "s124",
+        "to": [],
+        "inbox_id": "INBOX01",
+        "thread_id": "THREAD01"
+      },
+      "INBOX_THREAD_EMAIL02": {
+        "attachments": [],
+        "bcc": [],
+        "cc": [],
+        "direction": "s1a7",
+        "from": "s1a8",
+        "html": "s1a9",
+        "id": "INBOX_THREAD_EMAIL02",
+        "message_id": "MESSAGE01",
+        "read": true,
+        "received_at": "s1ad",
+        "reply_to": [],
+        "subject": "s1af",
+        "text": "s1b0",
+        "to": [],
+        "inbox_id": "INBOX01",
+        "thread_id": "THREAD01"
+      }
+    }
+  },
+  "new": {
+    "inbox_thread_email": {
+      "inbox_thread_email_ref01": {
+        "attachments": [],
+        "bcc": [],
+        "cc": [],
+        "direction": "s233",
+        "from": "s234",
+        "html": "s235",
+        "message_id": "MESSAGE01",
+        "read": true,
+        "received_at": "s239",
+        "reply_to": [],
+        "subject": "s23b",
+        "text": "s23c",
+        "to": []
+      }
+    }
+  },
+  "requests": {
+    "GET /inboxes/{inbox_id}/threads/{thread_id}/emails": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    }
+  }
+}

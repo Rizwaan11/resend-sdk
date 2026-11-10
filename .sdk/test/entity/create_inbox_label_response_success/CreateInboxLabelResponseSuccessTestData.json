@@ -1,0 +1,39 @@
+{
+  "existing": {
+    "create_inbox_label_response_success": {
+      "CREATE_INBOX_LABEL_RESPONSE_SUCCESS00": {
+        "color": "s14",
+        "name": "s15",
+        "inbox_id": "INBOX01",
+        "id": "CREATE_INBOX_LABEL_RESPONSE_SUCCESS00"
+      },
+      "CREATE_INBOX_LABEL_RESPONSE_SUCCESS01": {
+        "color": "s28",
+        "name": "s29",
+        "inbox_id": "INBOX01",
+        "id": "CREATE_INBOX_LABEL_RESPONSE_SUCCESS01"
+      },
+      "CREATE_INBOX_LABEL_RESPONSE_SUCCESS02": {
+        "color": "s3c",
+        "name": "s3d",
+        "inbox_id": "INBOX01",
+        "id": "CREATE_INBOX_LABEL_RESPONSE_SUCCESS02"
+      }
+    }
+  },
+  "new": {
+    "create_inbox_label_response_success": {
+      "create_inbox_label_response_success_ref01": {
+        "color": "s50",
+        "name": "s51"
+      }
+    }
+  },
+  "requests": {
+    "POST /inboxes/{inbox_id}/labels": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    }
+  }
+}

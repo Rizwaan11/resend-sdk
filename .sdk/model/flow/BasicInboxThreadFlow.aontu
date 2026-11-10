@@ -1,0 +1,26 @@
+# BasicInboxThreadFlow
+
+main: kit: flow: BasicInboxThreadFlow:
+{
+  entity: "inbox_thread",
+  kind: "basic",
+  name: "BasicInboxThreadFlow",
+  step: [
+    {
+      m: {
+        inbox_id: "inbox01"
+      }
+
+      o: "list",
+      v: [
+        {
+          apply: "ItemExists",
+          def: {
+            ref: "inbox_thread_ref01"
+          }
+        }
+      ]
+    }
+  ],
+  "key$": "BasicInboxThreadFlow"
+}

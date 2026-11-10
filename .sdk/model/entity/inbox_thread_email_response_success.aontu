@@ -1,0 +1,414 @@
+# Entity: inbox_thread_email_response_success
+
+main: kit: entity: inbox_thread_email_response_success: {
+
+  alias: field: {}
+
+  fields: {
+    attachments: {
+      h: "Attachments"
+      n: "attachments"
+      r: true
+      sh: "The attachments of the message."
+      t: "`$ARRAY`"
+    }
+    bcc: {
+      h: "Bcc"
+      n: "bcc"
+      r: true
+      sh: "The BCC recipients of the message."
+      t: "`$ARRAY`"
+    }
+    cc: {
+      h: "Cc"
+      n: "cc"
+      r: true
+      sh: "The CC recipients of the message."
+      t: "`$ARRAY`"
+    }
+    direction: {
+      h: "Direction"
+      n: "direction"
+      r: true
+      sh: "Whether the inbox received the message (`inbound`) or sent it (`outbound`)."
+      t: "`$STRING`"
+    }
+    from: {
+      h: "From"
+      n: "from"
+      r: true
+      sh: "Sender email address."
+      t: "`$STRING`"
+    }
+    html: {
+      h: "Html"
+      n: "html"
+      r: true
+      sh: "The HTML body."
+      t: [
+        "`$ONE`"
+        [
+          "`$STRING`"
+          "`$NULL`"
+        ]
+      ]
+    }
+    id: {
+      fo: "uuid"
+      h: "Id"
+      n: "id"
+      r: true
+      sh: "The ID of the message."
+      t: "`$STRING`"
+    }
+    message_id: {
+      h: "Message Id"
+      n: "message_id"
+      r: true
+      sh: "The Message-ID header of the message."
+      t: [
+        "`$ONE`"
+        [
+          "`$STRING`"
+          "`$NULL`"
+        ]
+      ]
+    }
+    read: {
+      h: "Read"
+      n: "read"
+      r: true
+      sh: "Whether the message has been read."
+      t: "`$BOOLEAN`"
+    }
+    received_at: {
+      fo: "date-time"
+      h: "Received At"
+      n: "received_at"
+      r: true
+      sh: "Timestamp when the inbox received the message, or when the inbox sent it."
+      t: "`$STRING`"
+    }
+    reply_to: {
+      h: "Reply To"
+      n: "reply_to"
+      r: true
+      sh: "The Reply-To addresses of the message."
+      t: "`$ARRAY`"
+    }
+    subject: {
+      h: "Subject"
+      n: "subject"
+      r: true
+      sh: "The subject of the message."
+      t: [
+        "`$ONE`"
+        [
+          "`$STRING`"
+          "`$NULL`"
+        ]
+      ]
+    }
+    text: {
+      h: "Text"
+      n: "text"
+      r: true
+      sh: "The plain-text body."
+      t: [
+        "`$ONE`"
+        [
+          "`$STRING`"
+          "`$NULL`"
+        ]
+      ]
+    }
+    to: {
+      h: "To"
+      n: "to"
+      r: true
+      sh: "The recipients of the message."
+      t: "`$ARRAY`"
+    }
+  }
+
+  id: {
+    field: "id"
+    name: "id"
+  }
+
+  name: "inbox_thread_email_response_success"
+  op: {
+    create: {
+      name: "create"
+      points: [
+        {
+          bf: [
+            "attachments"
+            "bcc"
+            "cc"
+            "headers"
+            "html"
+            "subject"
+            "text"
+            "to"
+          ]
+          co: {
+            id: "POST /inboxes/{inbox_id}/threads/{thread_id}/emails/{email_id}/forward"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            header: [
+              {
+                k: "header"
+                n: "idempotency_key"
+                or: "Idempotency-Key"
+                r: false
+                t: "`$STRING`"
+              }
+            ]
+            params: [
+              {
+                k: "param"
+                n: "email_id"
+                or: "email_id"
+                r: true
+                t: "`$STRING`"
+              }
+              {
+                ex: "b3e2b2b6-3f0e-4c8e-9ad3-2f43a1e2c7f1"
+                k: "param"
+                n: "inbox_id"
+                or: "inbox_id"
+                r: true
+                t: "`$STRING`"
+              }
+              {
+                k: "param"
+                n: "thread_id"
+                or: "thread_id"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "POST"
+          o: "/inboxes/{inbox_id}/threads/{thread_id}/emails/{email_id}/forward"
+          q: {
+            "$action": "forward"
+            exist: [
+              "email_id"
+              "inbox_id"
+              "thread_id"
+            ]
+          }
+          rs: {
+            kind: "json"
+            media: "application/json"
+          }
+          s: [
+            {
+              lit: "inboxes"
+            }
+            {
+              var: "inbox_id"
+            }
+            {
+              lit: "threads"
+            }
+            {
+              var: "thread_id"
+            }
+            {
+              lit: "emails"
+            }
+            {
+              var: "email_id"
+            }
+            {
+              lit: "forward"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+        {
+          bf: [
+            "attachments"
+            "bcc"
+            "cc"
+            "headers"
+            "html"
+            "reply_all"
+            "subject"
+            "text"
+          ]
+          co: {
+            id: "POST /inboxes/{inbox_id}/threads/{thread_id}/emails/{email_id}/reply"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            header: [
+              {
+                k: "header"
+                n: "idempotency_key"
+                or: "Idempotency-Key"
+                r: false
+                t: "`$STRING`"
+              }
+            ]
+            params: [
+              {
+                k: "param"
+                n: "email_id"
+                or: "email_id"
+                r: true
+                t: "`$STRING`"
+              }
+              {
+                ex: "b3e2b2b6-3f0e-4c8e-9ad3-2f43a1e2c7f1"
+                k: "param"
+                n: "inbox_id"
+                or: "inbox_id"
+                r: true
+                t: "`$STRING`"
+              }
+              {
+                k: "param"
+                n: "thread_id"
+                or: "thread_id"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "POST"
+          o: "/inboxes/{inbox_id}/threads/{thread_id}/emails/{email_id}/reply"
+          q: {
+            "$action": "reply"
+            exist: [
+              "email_id"
+              "inbox_id"
+              "thread_id"
+            ]
+          }
+          rs: {
+            kind: "json"
+            media: "application/json"
+          }
+          s: [
+            {
+              lit: "inboxes"
+            }
+            {
+              var: "inbox_id"
+            }
+            {
+              lit: "threads"
+            }
+            {
+              var: "thread_id"
+            }
+            {
+              lit: "emails"
+            }
+            {
+              var: "email_id"
+            }
+            {
+              lit: "reply"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+    load: {
+      name: "load"
+      points: [
+        {
+          co: {
+            id: "GET /inboxes/{inbox_id}/threads/{thread_id}/emails/{email_id}"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "email_id"
+                or: "email_id"
+                r: true
+                t: "`$STRING`"
+              }
+              {
+                ex: "b3e2b2b6-3f0e-4c8e-9ad3-2f43a1e2c7f1"
+                k: "param"
+                n: "inbox_id"
+                or: "inbox_id"
+                r: true
+                t: "`$STRING`"
+              }
+              {
+                k: "param"
+                n: "thread_id"
+                or: "thread_id"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/inboxes/{inbox_id}/threads/{thread_id}/emails/{email_id}"
+          q: {
+            exist: [
+              "email_id"
+              "inbox_id"
+              "thread_id"
+            ]
+          }
+          rs: {
+            kind: "json"
+            media: "application/json"
+          }
+          s: [
+            {
+              lit: "inboxes"
+            }
+            {
+              var: "inbox_id"
+            }
+            {
+              lit: "threads"
+            }
+            {
+              var: "thread_id"
+            }
+            {
+              lit: "emails"
+            }
+            {
+              var: "email_id"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+  }
+
+
+  relations: ancestors: [
+    [path("$.main.kit.entity.inbox") path("$.main.kit.entity.email")]
+  ]
+
+}

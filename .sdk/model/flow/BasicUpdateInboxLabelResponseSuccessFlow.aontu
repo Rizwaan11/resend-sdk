@@ -1,0 +1,33 @@
+# BasicUpdateInboxLabelResponseSuccessFlow
+
+main: kit: flow: BasicUpdateInboxLabelResponseSuccessFlow:
+{
+  entity: "update_inbox_label_response_success",
+  kind: "basic",
+  name: "BasicUpdateInboxLabelResponseSuccessFlow",
+  step: [
+    {
+      d: {
+        inbox_id: "inbox01"
+      }
+
+      i: {
+        ref: "update_inbox_label_response_success_ref01",
+        srcdatavar: "update_inbox_label_response_success_ref01_data",
+        suffix: "_up0",
+        textfield: "color"
+      }
+
+      o: "update",
+      s: [
+        {
+          apply: "TextFieldMark",
+          def: {
+            mark: "Mark01-update_inbox_label_response_success_ref01"
+          }
+        }
+      ]
+    }
+  ],
+  "key$": "BasicUpdateInboxLabelResponseSuccessFlow"
+}

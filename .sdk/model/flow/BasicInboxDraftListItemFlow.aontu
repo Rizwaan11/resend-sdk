@@ -1,0 +1,26 @@
+# BasicInboxDraftListItemFlow
+
+main: kit: flow: BasicInboxDraftListItemFlow:
+{
+  entity: "inbox_draft_list_item",
+  kind: "basic",
+  name: "BasicInboxDraftListItemFlow",
+  step: [
+    {
+      m: {
+        inbox_id: "inbox01"
+      }
+
+      o: "list",
+      v: [
+        {
+          apply: "ItemExists",
+          def: {
+            ref: "inbox_draft_list_item_ref01"
+          }
+        }
+      ]
+    }
+  ],
+  "key$": "BasicInboxDraftListItemFlow"
+}

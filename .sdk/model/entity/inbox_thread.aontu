@@ -1,0 +1,406 @@
+# Entity: inbox_thread
+
+main: kit: entity: inbox_thread: {
+
+  alias: field: {}
+
+  fields: {
+    bcc: {
+      h: "Bcc"
+      n: "bcc"
+      r: true
+      sh: "The BCC recipients of the most recent email."
+      t: "`$ARRAY`"
+    }
+    cc: {
+      h: "Cc"
+      n: "cc"
+      r: true
+      sh: "The CC recipients of the most recent email."
+      t: "`$ARRAY`"
+    }
+    email_count: {
+      h: "Email Count"
+      n: "email_count"
+      r: true
+      sh: "The number of emails in the thread."
+      t: "`$INTEGER`"
+    }
+    folder: {
+      h: "Folder"
+      n: "folder"
+      r: true
+      sh: "The folder the thread is in."
+      t: "`$STRING`"
+    }
+    from: {
+      h: "From"
+      n: "from"
+      r: true
+      sh: "The sender email address."
+      t: [
+        "`$ONE`"
+        [
+          "`$STRING`"
+          "`$NULL`"
+        ]
+      ]
+    }
+    has_attachment: {
+      h: "Has Attachment"
+      n: "has_attachment"
+      r: true
+      sh: "Whether the most recent email in the thread has an attachment."
+      t: "`$BOOLEAN`"
+    }
+    has_draft: {
+      h: "Has Draft"
+      n: "has_draft"
+      r: true
+      sh: "Whether the thread has an unsent draft."
+      t: "`$BOOLEAN`"
+    }
+    id: {
+      fo: "uuid"
+      h: "Id"
+      n: "id"
+      r: true
+      sh: "The ID of the thread."
+      t: "`$STRING`"
+    }
+    labels: {
+      h: "Labels"
+      n: "labels"
+      r: true
+      sh: "The labels attached to the thread."
+      t: "`$ARRAY`"
+    }
+    matched_email_id: {
+      fo: "uuid"
+      h: "Matched Email Id"
+      n: "matched_email_id"
+      r: true
+      sh: "The ID of the email in the thread that matched the search."
+      t: [
+        "`$ONE`"
+        [
+          "`$STRING`"
+          "`$NULL`"
+        ]
+      ]
+    }
+    read: {
+      h: "Read"
+      n: "read"
+      r: true
+      sh: "True only when every email in the thread is read."
+      t: "`$BOOLEAN`"
+    }
+    received_at: {
+      fo: "date-time"
+      h: "Received At"
+      n: "received_at"
+      r: true
+      sh: "Timestamp when the thread was last active."
+      t: "`$STRING`"
+    }
+    subject: {
+      h: "Subject"
+      n: "subject"
+      r: true
+      sh: "The subject of the thread."
+      t: [
+        "`$ONE`"
+        [
+          "`$STRING`"
+          "`$NULL`"
+        ]
+      ]
+    }
+    to: {
+      h: "To"
+      n: "to"
+      r: true
+      sh: "The recipients of the most recent email."
+      t: "`$ARRAY`"
+    }
+  }
+
+  id: {
+    field: "id"
+    name: "id"
+  }
+
+  name: "inbox_thread"
+  op: {
+    list: {
+      name: "list"
+      points: [
+        {
+          co: {
+            id: "GET /inboxes/{inbox_id}/threads"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                ex: "b3e2b2b6-3f0e-4c8e-9ad3-2f43a1e2c7f1"
+                k: "param"
+                n: "inbox_id"
+                or: "inbox_id"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+            query: [
+              {
+                k: "query"
+                n: "after"
+                or: "after"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "before"
+                or: "before"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                ex: [
+                  "inbox"
+                  "sent"
+                ]
+                k: "query"
+                n: "folder"
+                or: "folders"
+                r: false
+                t: "`$ARRAY`"
+              }
+              {
+                ex: [
+                  "7f9c1d2e-4a6b-4c3d-8e15-9b0a7c6d5e34"
+                ]
+                k: "query"
+                n: "label"
+                or: "labels"
+                r: false
+                t: "`$ARRAY`"
+              }
+              {
+                k: "query"
+                n: "limit"
+                or: "limit"
+                r: false
+                t: "`$INTEGER`"
+              }
+              {
+                k: "query"
+                n: "read"
+                or: "read"
+                r: false
+                t: "`$BOOLEAN`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/inboxes/{inbox_id}/threads"
+          q: {
+            exist: [
+              "inbox_id"
+            ]
+          }
+          rs: {
+            kind: "json"
+            media: "application/json"
+          }
+          s: [
+            {
+              lit: "inboxes"
+            }
+            {
+              var: "inbox_id"
+            }
+            {
+              lit: "threads"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body.data`"
+          }
+        }
+        {
+          co: {
+            id: "GET /inboxes/{inbox_id}/threads/search"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                ex: "b3e2b2b6-3f0e-4c8e-9ad3-2f43a1e2c7f1"
+                k: "param"
+                n: "inbox_id"
+                or: "inbox_id"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+            query: [
+              {
+                k: "query"
+                n: "after"
+                or: "after"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "bcc"
+                or: "bcc"
+                r: false
+                t: "`$ARRAY`"
+              }
+              {
+                k: "query"
+                n: "before"
+                or: "before"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "cc"
+                or: "cc"
+                r: false
+                t: "`$ARRAY`"
+              }
+              {
+                ex: "2026-09-30"
+                k: "query"
+                n: "end_date"
+                or: "end_date"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                ex: [
+                  "inbox"
+                  "sent"
+                ]
+                k: "query"
+                n: "folder"
+                or: "folders"
+                r: false
+                t: "`$ARRAY`"
+              }
+              {
+                ex: [
+                  "isabella@example.com"
+                  "carolina@example.com"
+                ]
+                k: "query"
+                n: "from"
+                or: "from"
+                r: false
+                t: "`$ARRAY`"
+              }
+              {
+                k: "query"
+                n: "has_attachment"
+                or: "has_attachment"
+                r: false
+                t: "`$BOOLEAN`"
+              }
+              {
+                ex: [
+                  "7f9c1d2e-4a6b-4c3d-8e15-9b0a7c6d5e34"
+                ]
+                k: "query"
+                n: "label"
+                or: "labels"
+                r: false
+                t: "`$ARRAY`"
+              }
+              {
+                k: "query"
+                n: "limit"
+                or: "limit"
+                r: false
+                t: "`$INTEGER`"
+              }
+              {
+                ex: "invoice -draft"
+                k: "query"
+                n: "query"
+                or: "query"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "read"
+                or: "read"
+                r: false
+                t: "`$BOOLEAN`"
+              }
+              {
+                ex: "2026-09-01"
+                k: "query"
+                n: "start_date"
+                or: "start_date"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "to"
+                or: "to"
+                r: false
+                t: "`$ARRAY`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/inboxes/{inbox_id}/threads/search"
+          q: {
+            exist: [
+              "inbox_id"
+            ]
+          }
+          rs: {
+            kind: "json"
+            media: "application/json"
+          }
+          s: [
+            {
+              lit: "inboxes"
+            }
+            {
+              var: "inbox_id"
+            }
+            {
+              lit: "threads"
+            }
+            {
+              lit: "search"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body.data`"
+          }
+        }
+      ]
+    }
+  }
+
+
+  relations: ancestors: [
+    [path("$.main.kit.entity.inbox")]
+  ]
+
+}

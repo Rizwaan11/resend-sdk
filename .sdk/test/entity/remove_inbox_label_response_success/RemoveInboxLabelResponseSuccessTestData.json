@@ -1,0 +1,33 @@
+{
+  "existing": {
+    "remove_inbox_label_response_success": {
+      "REMOVE_INBOX_LABEL_RESPONSE_SUCCESS00": {
+        "inbox_id": "INBOX01",
+        "label_id": "LABEL01",
+        "id": "REMOVE_INBOX_LABEL_RESPONSE_SUCCESS00"
+      },
+      "REMOVE_INBOX_LABEL_RESPONSE_SUCCESS01": {
+        "inbox_id": "INBOX01",
+        "label_id": "LABEL01",
+        "id": "REMOVE_INBOX_LABEL_RESPONSE_SUCCESS01"
+      },
+      "REMOVE_INBOX_LABEL_RESPONSE_SUCCESS02": {
+        "inbox_id": "INBOX01",
+        "label_id": "LABEL01",
+        "id": "REMOVE_INBOX_LABEL_RESPONSE_SUCCESS02"
+      }
+    }
+  },
+  "new": {
+    "remove_inbox_label_response_success": {
+      "remove_inbox_label_response_success_ref01": {}
+    }
+  },
+  "requests": {
+    "DELETE /inboxes/{inbox_id}/labels/{label_id}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    }
+  }
+}

@@ -1,0 +1,95 @@
+{
+  "existing": {
+    "inbox_draft_response_success": {
+      "INBOX_DRAFT_RESPONSE_SUCCESS00": {
+        "attachments": [],
+        "bcc": [],
+        "cc": [],
+        "created_at": "s99",
+        "email_id": "EMAIL01",
+        "html": "s9b",
+        "id": "INBOX_DRAFT_RESPONSE_SUCCESS00",
+        "object": "s9d",
+        "reply_to_email_id": "REPLY_TO_EMAIL01",
+        "subject": "s9f",
+        "text": "sa0",
+        "thread_id": "THREAD01",
+        "to": "sa2",
+        "type": "sa3",
+        "updated_at": "sa4",
+        "draft_id": "DRAFT01",
+        "inbox_id": "INBOX01"
+      },
+      "INBOX_DRAFT_RESPONSE_SUCCESS01": {
+        "attachments": [],
+        "bcc": [],
+        "cc": [],
+        "created_at": "s12f",
+        "email_id": "EMAIL01",
+        "html": "s131",
+        "id": "INBOX_DRAFT_RESPONSE_SUCCESS01",
+        "object": "s133",
+        "reply_to_email_id": "REPLY_TO_EMAIL01",
+        "subject": "s135",
+        "text": "s136",
+        "thread_id": "THREAD01",
+        "to": "s138",
+        "type": "s139",
+        "updated_at": "s13a",
+        "draft_id": "DRAFT01",
+        "inbox_id": "INBOX01"
+      },
+      "INBOX_DRAFT_RESPONSE_SUCCESS02": {
+        "attachments": [],
+        "bcc": [],
+        "cc": [],
+        "created_at": "s1c5",
+        "email_id": "EMAIL01",
+        "html": "s1c7",
+        "id": "INBOX_DRAFT_RESPONSE_SUCCESS02",
+        "object": "s1c9",
+        "reply_to_email_id": "REPLY_TO_EMAIL01",
+        "subject": "s1cb",
+        "text": "s1cc",
+        "thread_id": "THREAD01",
+        "to": "s1ce",
+        "type": "s1cf",
+        "updated_at": "s1d0",
+        "draft_id": "DRAFT01",
+        "inbox_id": "INBOX01"
+      }
+    }
+  },
+  "new": {
+    "inbox_draft_response_success": {
+      "inbox_draft_response_success_ref01": {
+        "attachments": [],
+        "bcc": [],
+        "cc": [],
+        "created_at": "s25b",
+        "email_id": "EMAIL01",
+        "html": "s25d",
+        "object": "s25f",
+        "reply_to_email_id": "REPLY_TO_EMAIL01",
+        "subject": "s261",
+        "text": "s262",
+        "thread_id": "THREAD01",
+        "to": "s264",
+        "type": "s265",
+        "updated_at": "s266"
+      }
+    }
+  },
+  "requests": {
+    "POST /inboxes/{inbox_id}/drafts/{draft_id}/send": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "GET /inboxes/{inbox_id}/drafts/{draft_id}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    }
+  }
+}

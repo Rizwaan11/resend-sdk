@@ -1,0 +1,107 @@
+# Entity: set_inbox_thread_labels_response_success
+
+main: kit: entity: set_inbox_thread_labels_response_success: {
+
+  alias: field: {}
+
+  fields: {
+    data: {
+      h: "Data"
+      n: "data"
+      r: true
+      sh: "Every label on the thread after the change."
+      t: "`$ARRAY`"
+    }
+    labels: {
+      h: "Labels"
+      n: "labels"
+      r: true
+      sh: "The IDs of the labels the thread carries after the change."
+      t: "`$ARRAY`"
+    }
+    object: {
+      h: "Object"
+      n: "object"
+      r: true
+      sh: "Type of the response object."
+      t: "`$STRING`"
+    }
+  }
+
+  name: "set_inbox_thread_labels_response_success"
+  op: {
+    update: {
+      name: "update"
+      points: [
+        {
+          bf: [
+            "labels"
+          ]
+          co: {
+            id: "PUT /inboxes/{inbox_id}/threads/{thread_id}/labels"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                ex: "b3e2b2b6-3f0e-4c8e-9ad3-2f43a1e2c7f1"
+                k: "param"
+                n: "inbox_id"
+                or: "inbox_id"
+                r: true
+                t: "`$STRING`"
+              }
+              {
+                k: "param"
+                n: "thread_id"
+                or: "thread_id"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "PUT"
+          o: "/inboxes/{inbox_id}/threads/{thread_id}/labels"
+          q: {
+            exist: [
+              "inbox_id"
+              "thread_id"
+            ]
+          }
+          rs: {
+            kind: "json"
+            media: "application/json"
+          }
+          s: [
+            {
+              lit: "inboxes"
+            }
+            {
+              var: "inbox_id"
+            }
+            {
+              lit: "threads"
+            }
+            {
+              var: "thread_id"
+            }
+            {
+              lit: "labels"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+  }
+
+
+  relations: ancestors: [
+    [path("$.main.kit.entity.inbox")]
+  ]
+
+}

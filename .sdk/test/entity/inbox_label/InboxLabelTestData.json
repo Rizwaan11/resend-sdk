@@ -1,0 +1,43 @@
+{
+  "existing": {
+    "inbox_label": {
+      "INBOX_LABEL00": {
+        "color": "s28",
+        "created_at": "s29",
+        "id": "INBOX_LABEL00",
+        "name": "s2b",
+        "inbox_id": "INBOX01"
+      },
+      "INBOX_LABEL01": {
+        "color": "s50",
+        "created_at": "s51",
+        "id": "INBOX_LABEL01",
+        "name": "s53",
+        "inbox_id": "INBOX01"
+      },
+      "INBOX_LABEL02": {
+        "color": "s78",
+        "created_at": "s79",
+        "id": "INBOX_LABEL02",
+        "name": "s7b",
+        "inbox_id": "INBOX01"
+      }
+    }
+  },
+  "new": {
+    "inbox_label": {
+      "inbox_label_ref01": {
+        "color": "sa0",
+        "created_at": "sa1",
+        "name": "sa3"
+      }
+    }
+  },
+  "requests": {
+    "GET /inboxes/{inbox_id}/labels": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    }
+  }
+}

@@ -1,0 +1,43 @@
+{
+  "existing": {
+    "update_inbox_response_success": {
+      "UPDATE_INBOX_RESPONSE_SUCCESS00": {
+        "from_name": "s28",
+        "id": "UPDATE_INBOX_RESPONSE_SUCCESS00",
+        "name": "s2a",
+        "object": "s2b",
+        "inbox_id": "INBOX01"
+      },
+      "UPDATE_INBOX_RESPONSE_SUCCESS01": {
+        "from_name": "s50",
+        "id": "UPDATE_INBOX_RESPONSE_SUCCESS01",
+        "name": "s52",
+        "object": "s53",
+        "inbox_id": "INBOX01"
+      },
+      "UPDATE_INBOX_RESPONSE_SUCCESS02": {
+        "from_name": "s78",
+        "id": "UPDATE_INBOX_RESPONSE_SUCCESS02",
+        "name": "s7a",
+        "object": "s7b",
+        "inbox_id": "INBOX01"
+      }
+    }
+  },
+  "new": {
+    "update_inbox_response_success": {
+      "update_inbox_response_success_ref01": {
+        "from_name": "sa0",
+        "name": "sa2",
+        "object": "sa3"
+      }
+    }
+  },
+  "requests": {
+    "PATCH /inboxes/{inbox_id}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    }
+  }
+}

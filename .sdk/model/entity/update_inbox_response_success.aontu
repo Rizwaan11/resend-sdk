@@ -1,0 +1,104 @@
+# Entity: update_inbox_response_success
+
+main: kit: entity: update_inbox_response_success: {
+
+  alias: field: {}
+
+  fields: {
+    from_name: {
+      h: "From Name"
+      n: "from_name"
+      r: false
+      sh: "The name recipients see when mail is sent from this inbox."
+      t: "`$STRING`"
+    }
+    id: {
+      fo: "uuid"
+      h: "Id"
+      n: "id"
+      r: true
+      sh: "The ID of the inbox."
+      t: "`$STRING`"
+    }
+    name: {
+      h: "Name"
+      n: "name"
+      r: false
+      sh: "New internal name for the inbox."
+      t: "`$STRING`"
+    }
+    object: {
+      h: "Object"
+      n: "object"
+      r: true
+      sh: "The object type."
+      t: "`$STRING`"
+    }
+  }
+
+  id: {
+    field: "id"
+    name: "id"
+  }
+
+  name: "update_inbox_response_success"
+  op: {
+    update: {
+      name: "update"
+      points: [
+        {
+          bf: [
+            "from_name"
+            "name"
+          ]
+          co: {
+            id: "PATCH /inboxes/{inbox_id}"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                ex: "b3e2b2b6-3f0e-4c8e-9ad3-2f43a1e2c7f1"
+                k: "param"
+                n: "inbox_id"
+                or: "inbox_id"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "PATCH"
+          o: "/inboxes/{inbox_id}"
+          q: {
+            exist: [
+              "inbox_id"
+            ]
+          }
+          rs: {
+            kind: "json"
+            media: "application/json"
+          }
+          s: [
+            {
+              lit: "inboxes"
+            }
+            {
+              var: "inbox_id"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+  }
+
+
+  relations: ancestors: [
+    [path("$.main.kit.entity.inbox")]
+  ]
+
+}

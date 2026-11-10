@@ -1,0 +1,23 @@
+# BasicAddInboxThreadLabelsResponseSuccessFlow
+
+main: kit: flow: BasicAddInboxThreadLabelsResponseSuccessFlow:
+{
+  entity: "add_inbox_thread_labels_response_success",
+  kind: "basic",
+  name: "BasicAddInboxThreadLabelsResponseSuccessFlow",
+  step: [
+    {
+      i: {
+        ref: "add_inbox_thread_labels_response_success_ref01"
+      }
+
+      m: {
+        inbox_id: "inbox01",
+        thread_id: "thread01"
+      }
+
+      o: "create"
+    }
+  ],
+  "key$": "BasicAddInboxThreadLabelsResponseSuccessFlow"
+}

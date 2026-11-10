@@ -1,0 +1,71 @@
+{
+  "existing": {
+    "create_inbox_draft_response_success": {
+      "CREATE_INBOX_DRAFT_RESPONSE_SUCCESS00": {
+        "attachments": "s6e",
+        "bcc": "s6f",
+        "cc": "s70",
+        "html": "s71",
+        "id": "CREATE_INBOX_DRAFT_RESPONSE_SUCCESS00",
+        "object": "s73",
+        "reply_to_email_id": "REPLY_TO_EMAIL01",
+        "subject": "s75",
+        "text": "s76",
+        "thread_id": "THREAD01",
+        "to": "s78",
+        "inbox_id": "INBOX01"
+      },
+      "CREATE_INBOX_DRAFT_RESPONSE_SUCCESS01": {
+        "attachments": "sdc",
+        "bcc": "sdd",
+        "cc": "sde",
+        "html": "sdf",
+        "id": "CREATE_INBOX_DRAFT_RESPONSE_SUCCESS01",
+        "object": "se1",
+        "reply_to_email_id": "REPLY_TO_EMAIL01",
+        "subject": "se3",
+        "text": "se4",
+        "thread_id": "THREAD01",
+        "to": "se6",
+        "inbox_id": "INBOX01"
+      },
+      "CREATE_INBOX_DRAFT_RESPONSE_SUCCESS02": {
+        "attachments": "s14a",
+        "bcc": "s14b",
+        "cc": "s14c",
+        "html": "s14d",
+        "id": "CREATE_INBOX_DRAFT_RESPONSE_SUCCESS02",
+        "object": "s14f",
+        "reply_to_email_id": "REPLY_TO_EMAIL01",
+        "subject": "s151",
+        "text": "s152",
+        "thread_id": "THREAD01",
+        "to": "s154",
+        "inbox_id": "INBOX01"
+      }
+    }
+  },
+  "new": {
+    "create_inbox_draft_response_success": {
+      "create_inbox_draft_response_success_ref01": {
+        "attachments": "s1b8",
+        "bcc": "s1b9",
+        "cc": "s1ba",
+        "html": "s1bb",
+        "object": "s1bd",
+        "reply_to_email_id": "REPLY_TO_EMAIL01",
+        "subject": "s1bf",
+        "text": "s1c0",
+        "thread_id": "THREAD01",
+        "to": "s1c2"
+      }
+    }
+  },
+  "requests": {
+    "POST /inboxes/{inbox_id}/drafts": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    }
+  }
+}

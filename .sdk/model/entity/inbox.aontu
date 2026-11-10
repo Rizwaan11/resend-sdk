@@ -1,0 +1,345 @@
+# Entity: inbox
+
+main: kit: entity: inbox: {
+
+  alias: field: {}
+
+  fields: {
+    created_at: {
+      fo: "date-time"
+      h: "Created At"
+      n: "created_at"
+      r: true
+      sh: "ISO 8601 timestamp when the inbox was created."
+      t: "`$STRING`"
+    }
+    domain_id: {
+      fo: "uuid"
+      h: "Domain Id"
+      n: "domain_id"
+      r: true
+      sh: "The ID of the domain that owns the address."
+      t: "`$STRING`"
+    }
+    drafts: {
+      h: "Drafts"
+      n: "drafts"
+      r: true
+      sh: "The number of unsent drafts."
+      t: "`$INTEGER`"
+    }
+    email_address: {
+      h: "Email Address"
+      n: "email_address"
+      r: true
+      sh: "The address of the inbox."
+      t: "`$STRING`"
+    }
+    forwarding: {
+      h: "Forwarding"
+      n: "forwarding"
+      r: false
+      sh: "When `true`, Resend provisions a receiving address so you can receive mail without adding an MX record."
+      t: "`$BOOLEAN`"
+    }
+    from_name: {
+      h: "From Name"
+      n: "from_name"
+      op: {
+        create: {
+          req: false
+          type: "`$STRING`"
+        }
+      }
+      r: true
+      sh: "The name recipients see when mail is sent from this inbox."
+      t: [
+        "`$ONE`"
+        [
+          "`$STRING`"
+          "`$NULL`"
+        ]
+      ]
+    }
+    id: {
+      fo: "uuid"
+      h: "Id"
+      n: "id"
+      r: true
+      sh: "The ID of the inbox."
+      t: "`$STRING`"
+    }
+    last_received: {
+      fo: "date-time"
+      h: "Last Received"
+      n: "last_received"
+      r: true
+      sh: "ISO 8601 timestamp of the newest received email in the Inbox folder."
+      t: [
+        "`$ONE`"
+        [
+          "`$STRING`"
+          "`$NULL`"
+        ]
+      ]
+    }
+    name: {
+      h: "Name"
+      n: "name"
+      op: {
+        create: {
+          req: false
+          type: "`$STRING`"
+        }
+      }
+      r: true
+      sh: "Internal name for the inbox."
+      t: "`$STRING`"
+    }
+    object: {
+      h: "Object"
+      n: "object"
+      r: true
+      sh: "The object type."
+      t: "`$STRING`"
+    }
+    receiving_address: {
+      h: "Receiving Address"
+      n: "receiving_address"
+      r: true
+      sh: "The address to forward mail to when forwarding is enabled."
+      t: [
+        "`$ONE`"
+        [
+          "`$STRING`"
+          "`$NULL`"
+        ]
+      ]
+    }
+    unread: {
+      h: "Unread"
+      n: "unread"
+      r: true
+      sh: "The number of unread threads in the Inbox folder."
+      t: "`$INTEGER`"
+    }
+    updated_at: {
+      fo: "date-time"
+      h: "Updated At"
+      n: "updated_at"
+      r: true
+      sh: "ISO 8601 timestamp when the inbox was last updated."
+      t: "`$STRING`"
+    }
+  }
+
+  id: {
+    field: "id"
+    name: "id"
+  }
+
+  name: "inbox"
+  op: {
+    create: {
+      name: "create"
+      points: [
+        {
+          bf: [
+            "email_address"
+            "forwarding"
+            "from_name"
+            "name"
+          ]
+          co: {
+            id: "POST /inboxes"
+            source: "openapi3"
+            version: 2
+          }
+          m: "POST"
+          o: "/inboxes"
+          rs: {
+            kind: "json"
+            media: "application/json"
+          }
+          s: [
+            {
+              lit: "inboxes"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+    list: {
+      name: "list"
+      points: [
+        {
+          co: {
+            id: "GET /inboxes"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            query: [
+              {
+                k: "query"
+                n: "after"
+                or: "after"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "before"
+                or: "before"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "limit"
+                or: "limit"
+                r: false
+                t: "`$INTEGER`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/inboxes"
+          rs: {
+            kind: "json"
+            media: "application/json"
+          }
+          s: [
+            {
+              lit: "inboxes"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body.data`"
+          }
+        }
+      ]
+    }
+    load: {
+      name: "load"
+      points: [
+        {
+          co: {
+            id: "GET /inboxes/{inbox_id}"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                ex: "b3e2b2b6-3f0e-4c8e-9ad3-2f43a1e2c7f1"
+                k: "param"
+                n: "id"
+                or: "inbox_id"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/inboxes/{inbox_id}"
+          q: {
+            exist: [
+              "id"
+            ]
+          }
+          r: {
+            param: {
+              inbox_id: "id"
+            }
+          }
+          rs: {
+            kind: "json"
+            media: "application/json"
+          }
+          s: [
+            {
+              lit: "inboxes"
+            }
+            {
+              var: "id"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+    update: {
+      name: "update"
+      points: [
+        {
+          bf: [
+            "actions"
+            "instructions"
+            "tone"
+          ]
+          co: {
+            id: "PATCH /inboxes/{inbox_id}/agent"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                ex: "b3e2b2b6-3f0e-4c8e-9ad3-2f43a1e2c7f1"
+                k: "param"
+                n: "id"
+                or: "inbox_id"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "PATCH"
+          o: "/inboxes/{inbox_id}/agent"
+          q: {
+            "$action": "agent"
+            exist: [
+              "id"
+            ]
+          }
+          r: {
+            param: {
+              inbox_id: "id"
+            }
+          }
+          rs: {
+            kind: "json"
+            media: "application/json"
+          }
+          s: [
+            {
+              lit: "inboxes"
+            }
+            {
+              var: "id"
+            }
+            {
+              lit: "agent"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+  }
+
+
+
+}

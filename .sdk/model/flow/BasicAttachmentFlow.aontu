@@ -1,0 +1,26 @@
+# BasicAttachmentFlow
+
+main: kit: flow: BasicAttachmentFlow:
+{
+  entity: "attachment",
+  kind: "basic",
+  name: "BasicAttachmentFlow",
+  step: [
+    {
+      m: {
+        receiving_id: "receiving01"
+      }
+
+      o: "list",
+      v: [
+        {
+          apply: "ItemExists",
+          def: {
+            ref: "attachment_ref01"
+          }
+        }
+      ]
+    }
+  ],
+  "key$": "BasicAttachmentFlow"
+}

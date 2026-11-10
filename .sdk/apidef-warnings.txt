@@ -1,0 +1,17 @@
+{
+  point: "warning"
+  note: "list GET /emails/metrics reads `body.data`, beside data of the object it is in: declare what it lists in guide.aontu"
+}
+
+
+{
+  point: "warning"
+  note: "Points GET /inboxes/{inbox_id}/threads and GET /inboxes/{inbox_id}/threads/search on entity=inbox_thread op=list have the same selector (exist: inbox_id), so only GET /inboxes/{inbox_id}/threads is ever chosen. An action or another entity in guide.aontu tells them apart."
+  entity: "inbox_thread"
+  op: "list"
+  points: [
+    "GET /inboxes/{inbox_id}/threads"
+    "GET /inboxes/{inbox_id}/threads/search"
+  ]
+
+}

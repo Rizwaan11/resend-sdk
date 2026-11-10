@@ -1,0 +1,197 @@
+# Entity: update_inbox_draft_response_success
+
+main: kit: entity: update_inbox_draft_response_success: {
+
+  alias: field: {}
+
+  fields: {
+    attachments: {
+      h: "Attachments"
+      n: "attachments"
+      r: false
+      sh: "Files to store on the draft."
+      t: [
+        "`$ONE`"
+        [
+          "`$ARRAY`"
+          "`$NULL`"
+        ]
+      ]
+    }
+    bcc: {
+      h: "Bcc"
+      n: "bcc"
+      r: false
+      sh: "The BCC recipients."
+      t: "`$ANY`"
+      union: {
+        branches: 2
+        count: 1
+        depth: 0
+      }
+    }
+    cc: {
+      h: "Cc"
+      n: "cc"
+      r: false
+      sh: "The CC recipients."
+      t: "`$ANY`"
+      union: {
+        branches: 2
+        count: 1
+        depth: 0
+      }
+    }
+    html: {
+      h: "Html"
+      n: "html"
+      r: false
+      sh: "The HTML body."
+      t: [
+        "`$ONE`"
+        [
+          "`$STRING`"
+          "`$NULL`"
+        ]
+      ]
+    }
+    id: {
+      fo: "uuid"
+      h: "Id"
+      n: "id"
+      r: true
+      sh: "The ID of the draft."
+      t: "`$STRING`"
+    }
+    object: {
+      h: "Object"
+      n: "object"
+      r: true
+      sh: "The object type."
+      t: "`$STRING`"
+    }
+    subject: {
+      h: "Subject"
+      n: "subject"
+      r: false
+      sh: "The subject."
+      t: [
+        "`$ONE`"
+        [
+          "`$STRING`"
+          "`$NULL`"
+        ]
+      ]
+    }
+    text: {
+      h: "Text"
+      n: "text"
+      r: false
+      sh: "The plain text body."
+      t: [
+        "`$ONE`"
+        [
+          "`$STRING`"
+          "`$NULL`"
+        ]
+      ]
+    }
+    to: {
+      h: "To"
+      n: "to"
+      r: false
+      sh: "The recipients."
+      t: "`$ANY`"
+      union: {
+        branches: 2
+        count: 1
+        depth: 0
+      }
+    }
+  }
+
+  id: {
+    field: "id"
+    name: "id"
+  }
+
+  name: "update_inbox_draft_response_success"
+  op: {
+    update: {
+      name: "update"
+      points: [
+        {
+          bf: [
+            "attachments"
+            "bcc"
+            "cc"
+            "html"
+            "subject"
+            "text"
+            "to"
+          ]
+          co: {
+            id: "PATCH /inboxes/{inbox_id}/drafts/{draft_id}"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "draft_id"
+                or: "draft_id"
+                r: true
+                t: "`$STRING`"
+              }
+              {
+                ex: "b3e2b2b6-3f0e-4c8e-9ad3-2f43a1e2c7f1"
+                k: "param"
+                n: "inbox_id"
+                or: "inbox_id"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "PATCH"
+          o: "/inboxes/{inbox_id}/drafts/{draft_id}"
+          q: {
+            exist: [
+              "draft_id"
+              "inbox_id"
+            ]
+          }
+          rs: {
+            kind: "json"
+            media: "application/json"
+          }
+          s: [
+            {
+              lit: "inboxes"
+            }
+            {
+              var: "inbox_id"
+            }
+            {
+              lit: "drafts"
+            }
+            {
+              var: "draft_id"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+  }
+
+
+  relations: ancestors: [
+    [path("$.main.kit.entity.inbox")]
+  ]
+
+}

@@ -1,0 +1,78 @@
+{
+  "existing": {
+    "contact_import_response_success": {
+      "CONTACT_IMPORT_RESPONSE_SUCCESS00": {
+        "column_map": "s6e",
+        "completed_at": "s6f",
+        "counts": {},
+        "created_at": "s71",
+        "file": "s72",
+        "id": "CONTACT_IMPORT_RESPONSE_SUCCESS00",
+        "object": "s74",
+        "on_conflict": "s75",
+        "segments": "s76",
+        "status": "s77",
+        "topics": "s78"
+      },
+      "CONTACT_IMPORT_RESPONSE_SUCCESS01": {
+        "column_map": "sdc",
+        "completed_at": "sdd",
+        "counts": {},
+        "created_at": "sdf",
+        "file": "se0",
+        "id": "CONTACT_IMPORT_RESPONSE_SUCCESS01",
+        "object": "se2",
+        "on_conflict": "se3",
+        "segments": "se4",
+        "status": "se5",
+        "topics": "se6"
+      },
+      "CONTACT_IMPORT_RESPONSE_SUCCESS02": {
+        "column_map": "s14a",
+        "completed_at": "s14b",
+        "counts": {},
+        "created_at": "s14d",
+        "file": "s14e",
+        "id": "CONTACT_IMPORT_RESPONSE_SUCCESS02",
+        "object": "s150",
+        "on_conflict": "s151",
+        "segments": "s152",
+        "status": "s153",
+        "topics": "s154"
+      }
+    }
+  },
+  "new": {
+    "contact_import_response_success": {
+      "contact_import_response_success_ref01": {
+        "column_map": "s1b8",
+        "completed_at": "s1b9",
+        "counts": {},
+        "created_at": "s1bb",
+        "file": "s1bc",
+        "object": "s1be",
+        "on_conflict": "s1bf",
+        "segments": "s1c0",
+        "status": "s1c1",
+        "topics": "s1c2"
+      }
+    }
+  },
+  "requests": {
+    "POST /contacts/imports": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "GET /contacts/imports": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "GET /contacts/imports/{id}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    }
+  }
+}

@@ -1,0 +1,68 @@
+{
+  "existing": {
+    "inbox_draft_list_item": {
+      "INBOX_DRAFT_LIST_ITEM00": {
+        "attachments": [],
+        "bcc": [],
+        "cc": [],
+        "id": "INBOX_DRAFT_LIST_ITEM00",
+        "reply_to_email_id": "REPLY_TO_EMAIL01",
+        "snippet": "s73",
+        "subject": "s74",
+        "thread_id": "THREAD01",
+        "to": "s76",
+        "type": "s77",
+        "updated_at": "s78"
+      },
+      "INBOX_DRAFT_LIST_ITEM01": {
+        "attachments": [],
+        "bcc": [],
+        "cc": [],
+        "id": "INBOX_DRAFT_LIST_ITEM01",
+        "reply_to_email_id": "REPLY_TO_EMAIL01",
+        "snippet": "se1",
+        "subject": "se2",
+        "thread_id": "THREAD01",
+        "to": "se4",
+        "type": "se5",
+        "updated_at": "se6"
+      },
+      "INBOX_DRAFT_LIST_ITEM02": {
+        "attachments": [],
+        "bcc": [],
+        "cc": [],
+        "id": "INBOX_DRAFT_LIST_ITEM02",
+        "reply_to_email_id": "REPLY_TO_EMAIL01",
+        "snippet": "s14f",
+        "subject": "s150",
+        "thread_id": "THREAD01",
+        "to": "s152",
+        "type": "s153",
+        "updated_at": "s154"
+      }
+    }
+  },
+  "new": {
+    "inbox_draft_list_item": {
+      "inbox_draft_list_item_ref01": {
+        "attachments": [],
+        "bcc": [],
+        "cc": [],
+        "reply_to_email_id": "REPLY_TO_EMAIL01",
+        "snippet": "s1bd",
+        "subject": "s1be",
+        "thread_id": "THREAD01",
+        "to": "s1c0",
+        "type": "s1c1",
+        "updated_at": "s1c2"
+      }
+    }
+  },
+  "requests": {
+    "GET /inboxes/{inbox_id}/drafts": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    }
+  }
+}

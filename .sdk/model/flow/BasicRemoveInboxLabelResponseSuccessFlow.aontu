@@ -1,0 +1,9 @@
+# BasicRemoveInboxLabelResponseSuccessFlow
+
+main: kit: flow: BasicRemoveInboxLabelResponseSuccessFlow:
+{
+  entity: "remove_inbox_label_response_success",
+  kind: "basic",
+  name: "BasicRemoveInboxLabelResponseSuccessFlow",
+  "key$": "BasicRemoveInboxLabelResponseSuccessFlow"
+}

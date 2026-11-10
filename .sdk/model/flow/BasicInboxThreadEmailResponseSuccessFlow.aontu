@@ -1,0 +1,48 @@
+# BasicInboxThreadEmailResponseSuccessFlow
+
+main: kit: flow: BasicInboxThreadEmailResponseSuccessFlow:
+{
+  entity: "inbox_thread_email_response_success",
+  kind: "basic",
+  name: "BasicInboxThreadEmailResponseSuccessFlow",
+  step: [
+    {
+      i: {
+        ref: "inbox_thread_email_response_success_ref01"
+      }
+
+      m: {
+        email_id: "email01",
+        inbox_id: "inbox01",
+        thread_id: "thread01"
+      }
+
+      o: "create"
+    }
+
+    {
+      i: {
+        ref: "inbox_thread_email_response_success_ref01",
+        srcdatavar: "inbox_thread_email_response_success_ref01_data",
+        suffix: "_dt0"
+      }
+
+      m: {
+        id: "inbox_thread_email_response_success01",
+        inbox_id: "inbox01",
+        thread_id: "thread01"
+      }
+
+      o: "load",
+      v: [
+        {
+          apply: "TextFieldMark",
+          def: {
+            mark: "Mark01-inbox_thread_email_response_success_ref01"
+          }
+        }
+      ]
+    }
+  ],
+  "key$": "BasicInboxThreadEmailResponseSuccessFlow"
+}

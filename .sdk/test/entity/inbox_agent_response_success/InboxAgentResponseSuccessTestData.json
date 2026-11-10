@@ -1,0 +1,27 @@
+{
+  "existing": {
+    "inbox_agent_response_success": {
+      "INBOX_AGENT_RESPONSE_SUCCESS00": {
+        "id": "INBOX_AGENT_RESPONSE_SUCCESS00"
+      },
+      "INBOX_AGENT_RESPONSE_SUCCESS01": {
+        "id": "INBOX_AGENT_RESPONSE_SUCCESS01"
+      },
+      "INBOX_AGENT_RESPONSE_SUCCESS02": {
+        "id": "INBOX_AGENT_RESPONSE_SUCCESS02"
+      }
+    }
+  },
+  "new": {
+    "inbox_agent_response_success": {
+      "inbox_agent_response_success_ref01": {}
+    }
+  },
+  "requests": {
+    "GET /inboxes/{inbox_id}/agent": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    }
+  }
+}

@@ -1,0 +1,46 @@
+# BasicInboxDraftResponseSuccessFlow
+
+main: kit: flow: BasicInboxDraftResponseSuccessFlow:
+{
+  entity: "inbox_draft_response_success",
+  kind: "basic",
+  name: "BasicInboxDraftResponseSuccessFlow",
+  step: [
+    {
+      i: {
+        ref: "inbox_draft_response_success_ref01"
+      }
+
+      m: {
+        draft_id: "draft01",
+        inbox_id: "inbox01"
+      }
+
+      o: "create"
+    }
+
+    {
+      i: {
+        ref: "inbox_draft_response_success_ref01",
+        srcdatavar: "inbox_draft_response_success_ref01_data",
+        suffix: "_dt0"
+      }
+
+      m: {
+        id: "inbox_draft_response_success01",
+        inbox_id: "inbox01"
+      }
+
+      o: "load",
+      v: [
+        {
+          apply: "TextFieldMark",
+          def: {
+            mark: "Mark01-inbox_draft_response_success_ref01"
+          }
+        }
+      ]
+    }
+  ],
+  "key$": "BasicInboxDraftResponseSuccessFlow"
+}
